@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { UserComponent } from './pages/user/user.component';
 
 export const routes: Routes = [
   // common routes
@@ -14,15 +15,14 @@ export const routes: Routes = [
     loadComponent: () => import('./auth/login/login.component').then((c) => c.LoginComponent),
   },
 
-  //administration
   {
     path: 'admin',
-    loadChildren: () => import('./pages/admin/admin.routes').then((routes) => routes.AdminRoute),
+    component: AdminComponent,
+    loadChildren: () => import('./pages/admin/admin.routes').then((c) => c.AdminRoutes),
   },
   {
     path: 'user',
-    loadChildren: () => import('./pages/user/user.routes').then((routes) => routes.UserRoute),
+    component: UserComponent,
+    loadChildren: () => import('./pages/user/user.routes').then((c) => c.UserRoutes),
   },
-
-  //user full access roles
 ];

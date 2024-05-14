@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 
-export const UserRoute: Routes = [
-  {
-    path: 'user-home',
-    loadComponent: () => import('./user.component').then((c) => c.UserComponent),
-  },
+export const UserRoutes: Routes = [
   {
     path: 'home',
     loadComponent: () => import('./home/home.component').then((c) => c.HomeComponent),
+  },
+  {
+    path: 'cart',
+    loadComponent: () => import('./cart/cart.component').then((c) => c.CartComponent),
   },
 ];
