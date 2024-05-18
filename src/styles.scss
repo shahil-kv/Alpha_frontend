@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'GeneralSans';
+  src: url('assets/fonts/General_Sans/GeneralSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'GeneralSans', sans-serif !important;
+}
+
+

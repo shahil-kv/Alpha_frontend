@@ -4,7 +4,6 @@ import { UserComponent } from './pages/user/user.component';
 
 export const routes: Routes = [
   // common routes
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
   {
     path: 'register',
     loadComponent: () =>
@@ -15,11 +14,15 @@ export const routes: Routes = [
     loadComponent: () => import('./auth/login/login.component').then((c) => c.LoginComponent),
   },
 
+  // admin routes
+
   {
     path: 'admin',
     component: AdminComponent,
     loadChildren: () => import('./pages/admin/admin.routes').then((c) => c.AdminRoutes),
   },
+
+  // user routes
   {
     path: 'user',
     component: UserComponent,
