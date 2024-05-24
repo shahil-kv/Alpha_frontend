@@ -1,8 +1,20 @@
-<section class="p-0">
-  <h1>Define yourself in your unique way.</h1>
-  <img src="../../../assets/" alt="test" />
-  <img src="../../../assets/" alt="image-test" />
-  <footer>
-    <button>Get Started<span class="material-symbols-outlined"> search </span></button>
+<section class="relative overflow-hidden h-[100vh]">
+  <div class="px-5 py-10">
+    <h1 class="font-black leading-none text-black font-size-5xl">Define yourself in your unique way.</h1>
+    <img class="absolute left-0 top-10" ngSrc="../../../assets/images/auth/Alpha Element (1).svg" priority width="500" height="20" alt="element_decoration" />
+    <img
+      priority
+      class="absolute left-[-44px] top-44 font-size-5xl"
+      style="width: 555px"
+      ngSrc="../../../assets/images/auth/Image Background Remover.png"
+      width="500"
+      height="20"
+      alt="person_decoration"
+    />
+  </div>
+  <footer class="absolute bottom-0 w-full p-10 bg-white">
+    <!-- <button class="w-full p-3 text-xl text-center text-white bg-black rounded-lg btn">Get Started <span class="material-symbols-outlined">arrow_forward</span></button> -->
+
+    <app-btn-common [firstName]="secondName">Update</app-btn-common>
   </footer>
 </section>

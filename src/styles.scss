@@ -9,22 +9,58 @@ $gutter: 1rem; //for primeflex grid system
 @import "../node_modules/primeng/resources/primeng.min.css";
 @import "assets/theme/theme.css";
 @import "assets/theme/layout/layout.scss";
-
+@import 'material-icons/iconfont/material-icons.css';
 
 
 
 @font-face {
   font-family: 'GeneralSans';
   src: url('assets/fonts/General_Sans/GeneralSans-Regular.otf') format('opentype');
-  font-weight: normal;
   font-style: normal;
 }
 
 *{
   padding: 0px;
   margin: 0px;
+  max-width: none !important;
   box-sizing: border-box;
   font-family: 'GeneralSans', sans-serif !important;
 }
+
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+}
+
+//font-size-classes
+
+.font-size-sm{
+  font-size: var(--font-size-sm);
+}
+
+.font-size-base {
+  font-size: var(--font-size-base);
+}
+
+.font-size-xl {
+  font-size: var(--font-size-xl);
+}
+
+.font-size-2xl{
+ font-size: var(--font-size-2xl);
+}
+
+.font-size-3xl {
+  font-size: var(--font-size-3xl);
+}
+.font-size-4xl {
+  font-size: var(--font-size-4xl);
+}
+
+.font-size-5xl {
+  font-size: var(--font-size-5xl);
+}
+
+
 
 
