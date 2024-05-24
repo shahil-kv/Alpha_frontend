@@ -1,0 +1,41 @@
+:root {
+  --body-bg: #f5f7fa;
+  --nav-border-color: #cbd0dd;
+  --page-header-bg: #e9ecef;
+  --page-body-bg: #ffffff;
+  --table-header-bg: #eeeeee;
+  --modal-header-bg: #eeeeee;
+}
+
+body.swal2-toast-shown .swal2-container {
+  z-index: 300000 !important;
+}
+
+.p-picklist-list,
+.p-menu ul {
+  padding-left: 0 !important;
+}
+
+.p-menu ul {
+  margin-bottom: 0 !important;
+}
+
+.p-listbox {
+  border-color: var(--);
+}
+
+div:where(.swal2-container) .swal2-popup.swal2-modal h2:where(.swal2-title) {
+  font-size: 1.5rem !important;
+}
+
+.p-float-label>[required]~label.form-label:after {
+  content: "*";
+  color: red;
+}
+
+.p-tree-empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

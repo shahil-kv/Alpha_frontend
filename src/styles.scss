@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+$gutter: 1rem; //for primeflex grid system
+
+//primeng and other css files importing
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "assets/theme/theme.css";
+@import "assets/theme/layout/layout.scss";
+
+
+
+
 @font-face {
   font-family: 'GeneralSans';
   src: url('assets/fonts/General_Sans/GeneralSans-Regular.otf') format('opentype');

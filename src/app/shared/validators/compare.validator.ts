@@ -2,6 +2,7 @@ import { AbstractControl, ValidationErrors, NG_VALIDATORS, Validator } from '@an
 import { Directive, Input } from '@angular/core';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[compare]',
   standalone: true,
   providers: [
@@ -16,10 +17,7 @@ export class CompareValidatorDirective implements Validator {
   @Input() compareValue: any;
   @Input() compare: string = '';
   validate(control: AbstractControl): ValidationErrors | null {
-    if (
-      control.value &&
-      (isNaN(control.value) || !this.compareFn(control.value, this.compareValue))
-    ) {
+    if (control.value && (isNaN(control.value) || !this.compareFn(control.value, this.compareValue))) {
       return { compare: true };
     }
     return null;
@@ -35,7 +33,7 @@ export class CompareValidatorDirective implements Validator {
       case 'notequalto':
         status = iValue1 !== iValue2;
         break;
-      case 'lessthan':
+      case 'Lessthan':
         status = iValue1 < iValue2;
         break;
       case 'lessthanorequal':

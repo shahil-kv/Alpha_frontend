@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './email-template.component.html',
-  styleUrl: './email-template.component.scss'
+  styleUrl: './email-template.component.scss',
 })
-export class EmailTemplateComponent {
-
-}
+export class EmailTemplateComponent {}

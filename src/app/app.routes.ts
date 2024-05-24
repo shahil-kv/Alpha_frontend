@@ -6,8 +6,7 @@ export const routes: Routes = [
   // common routes
   {
     path: 'register',
-    loadComponent: () =>
-      import('./auth/register/register.component').then((c) => c.RegisterComponent),
+    loadComponent: () => import('./auth/register/register.component').then((c) => c.RegisterComponent),
   },
   {
     path: 'login',

@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './system-settings.component.html',
-  styleUrl: './system-settings.component.scss'
+  styleUrl: './system-settings.component.scss',
 })
-export class SystemSettingsComponent {
-
-}
+export class SystemSettingsComponent {}
