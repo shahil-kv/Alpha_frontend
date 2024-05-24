@@ -1,1 +1,7 @@
-<button class="w-full p-3 text-xl text-center text-white bg-black rounded-lg btn"><ng-content></ng-content> <span class="material-symbols-outlined">arrow_forward</span></button>
+<button class="w-full p-4 text-2xl text-center rounded-lg btn" [ngStyle]="{
+    'color': CommonBtnData.textColor ,
+    'background-color': CommonBtnData.BgColor ,
+  }">
+  <ng-content></ng-content>
+  <span class="absolute ml-2 text-3xl material-symbols-outlined">{{CommonBtnData.icon}}</span>
+</button>

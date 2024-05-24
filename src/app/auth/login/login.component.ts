@@ -1,9 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { NgOptimizedImage } from '@angular/common';
 import { BtnCommonComponent } from '../../shared/components/btn-common/btn-common.component';
+import { CommonBtnClass } from '../../models/auth/login';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -11,6 +13,21 @@ import { BtnCommonComponent } from '../../shared/components/btn-common/btn-commo
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent {
-  secondName = signal('Value set in App Component');
+export class LoginComponent implements OnInit {
+
+  loginBtn = new CommonBtnClass()
+
+  ngOnInit(): void {
+    this.onLoad()
+  }
+
+  onLoad(){
+ this.setupBtn()
+  }
+
+  setupBtn(){
+this.loginBtn.BgColor='black'
+    this.loginBtn.icon ='arrow_forward'
+this.loginBtn.textColor='white'
+  }
 }
