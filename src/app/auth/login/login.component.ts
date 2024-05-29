@@ -4,7 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { JsonPipe, NgOptimizedImage } from '@angular/common';
 import { BtnCommonComponent } from '../../shared/components/btn-common/btn-common.component';
-import { CommonBtnClass } from '../../models/auth/login';
+import { CommonBtnClass, positions } from '../../models/auth/login';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ import { CommonBtnClass } from '../../models/auth/login';
 })
 export class LoginComponent implements OnInit {
 
-  loginBtn = new CommonBtnClass()
+  BtnData = new CommonBtnClass()
   items:any
 
   ngOnInit(): void {
@@ -28,9 +28,10 @@ export class LoginComponent implements OnInit {
   }
 
   setupBtn(){
-this.loginBtn.BgColor='black'
-    this.loginBtn.icon ='arrow_forward'
-this.loginBtn.textColor='white'
+this.BtnData.BgColor='black'
+    this.BtnData.icon ='arrow_forward'
+this.BtnData.textColor='white'
+this.BtnData.position=positions.left
   }
 
 
