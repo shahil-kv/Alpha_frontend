@@ -1,1 +1,93 @@
-<p>register works!</p>
+<section>
+  <form [formGroup]="registerForm" class="flex flex-col justify-between gap-3 px-5 py-10">
+
+    <div class="flex flex-col items-start justify-between gap-3 ">
+      <h1 class="font-extrabold leading-none font-size-4xl">Create an account</h1>
+      <p class="text-xl font-medium text-gray-500 ">Let's create your account</p>
+    </div>
+
+    <div class="flex flex-col justify-between gap-1 mt-5">
+      <label for="fullname" class="font-semibold text-black font-size-2xl">Full Name</label>
+      <input formControlName="fullname" placeholder="Enter your full name" id="fullname"
+        class="block w-full px-3 py-4 text-lg border border-gray-300 shadow-sm rounded-xl focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1 "
+        type="text" />
+      @if (submitted && f['fullname'].errors) {
+      <div class="invalid-feedback">
+        @if (f['fullname'].errors['required']) {
+        <div>Fullname is required</div>
+        }
+      </div>
+      }
+
+    </div>
+
+    <div class="flex flex-col justify-between gap-1 mt-2">
+      <label for="email" class="font-semibold text-black font-size-2xl">Email</label>
+      <input formControlName="email" placeholder="Enter your email address" id="email"
+        class="block w-full px-3 py-4 text-lg border border-gray-300 shadow-sm rounded-xl focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1 "
+        type="text" />
+      @if (submitted && f['email'].errors) {
+      <div class="invalid-feedback">
+        @if (f['email'].errors['required']) {
+        <div>Email is required</div>
+        } @if (f['email'].errors['email']) {
+        <div>Email is invalid</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="flex flex-col justify-between gap-1 mt-2">
+      <label for="password" class="font-semibold text-black font-size-2xl">Password</label>
+      <span class="relative">
+
+        <input formControlName="password" placeholder="Enter your password" id="password"
+          class="block w-full px-3 py-4 text-lg border border-gray-300 shadow-sm rounded-xl focus:outline-none focus:border-sky-500 focus:ring-sky-500 sm:text-sm focus:ring-1 "
+          type="password" />
+
+        @if (submitted && f['password'].errors) {
+        <div class="invalid-feedback">
+          @if (f['password'].errors['required']) {
+          <div>Password is required</div>
+          } @if (f['password'].errors['minlength']) {
+          <div>Password must be at least 6 characters</div>
+          } @if (f['password'].errors['maxlength']) {
+          <div>Username must not exceed 40 characters</div>
+          }
+        </div>
+        }
+
+        <span class="absolute font-light text-gray-400 material-symbols-outlined visiblity_class">
+          visibility_off
+        </span>
+        <!-- <span class="absolute material-symbols-outlined visiblity_class">
+          visibility
+        </span> -->
+      </span>
+    </div>
+
+    <div class="flex flex-col justify-between">
+      <p class="my-6 font-size-xl paragraph-color">By signing you are agreeing to our <span
+          class="font-semibold underline">Terms, Privacy Policy,</span>
+        and
+        <span class="font-semibold underline">Cookie Use</span>
+      </p>
+      <app-btn-common (click)="onSubmit()" class="cursor-pointer" [CommonBtnData]="BtnData">Create an
+        account</app-btn-common>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <span class="relative">
+        <hr class="my-4 ">
+        <span class="absolute top-0 text-xl px-3 text-gray-400 left-44 bg-[#f4f7fa]">Or</span>
+      </span>
+      <app-btn-common class="cursor-pointer" [CommonBtnData]="BtnDataForGoogle">Sign Up with Google </app-btn-common>
+      <app-btn-common class="cursor-pointer" [CommonBtnData]="BtnDataForFb">Sign up with Facebook</app-btn-common>
+    </div>
+
+    <p class="mt-8 text-center font-size-xl paragraph-color">Already have an account? <span
+        class="text-lg font-extrabold underline ">Login In</span></p>
+
+
+  </form>
+</section>
